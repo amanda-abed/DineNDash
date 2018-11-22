@@ -1,0 +1,58 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Plugin.StoreReview" Version="2.0.0.5" />
+    <PackageReference Include="Syncfusion.Xamarin.SfRating" Version="16.3.0.29" />
+    <PackageReference Include="Xamarin.Forms" Version="3.3.0.967583" />
+    <PackageReference Include="Prism.Unity.Forms" Version="7.1.0.431" />
+    <PackageReference Include="Xam.Plugin.ExternalMaps" Version="4.0.1" />
+    <PackageReference Include="ZXing.Net.Mobile" Version="2.4.1" />
+    <PackageReference Include="ZXing.Net.Mobile.Forms" Version="2.4.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Views\" />
+    <Folder Include="Service\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Models\RestaurantName.cs" />
+    <Compile Remove="CreditInfoPage.cs" />
+    <Compile Remove="Views\InNOutMenuPage.xaml.cs" />
+    <Compile Remove="ViewModels\InNOutMenuPageViewModel.cs" />
+    <Compile Remove="Services\IRepository.cs" />
+    <Compile Remove="Services\Repository.cs" />
+    <Compile Remove="Views\InNOutMenuContainerPage.xaml.cs" />
+    <Compile Remove="Views\TabIndividualItem.xaml.cs" />
+    <Compile Remove="ViewModels\InNOutMenuContainerPageViewModel.cs" />
+    <Compile Remove="Views\FirstMenuPage.cs" />
+    <Compile Remove="ViewModels\FirstMenuPageViewModel.cs" />
+    <Compile Remove="Views\TabIndiv.xaml.cs" />
+    <Compile Remove="Views\FirstMenuPage.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\ChooseSeatingPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="Views\ChooseSeatingPage.xaml" />
+    <EmbeddedResource Remove="Views\TabIndividualItem.xaml" />
+    <EmbeddedResource Remove="Views\InNOutMenuContainerPage.xaml" />
+    <EmbeddedResource Remove="Views\TabIndiv.xaml" />
+    <EmbeddedResource Remove="Views\FirstMenuPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ChooseSeatingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\ChooseSeatingPage.xaml.cs">
+      <DependentUpon>ChooseSeatingPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:DineNDash"
+    x:Class="DineNDash.Views.MainPage"
+    xmlns:prismBehaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+    NavigationPage.HasNavigationBar="false">
+    <StackLayout
+        Padding="0,50,0,10">
+        <Grid
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Padding="0, 0, 0, 0">
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    Height="*" />
+                <RowDefinition
+                    Height="*" />
+                <RowDefinition
+                    Height="*" />
+                <RowDefinition
+                    Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+                    Width="auto" />
+            </Grid.ColumnDefinitions>
+            <Label
+                Text="Welcome to Dine &amp; Dash!"
+                Grid.Row="0"
+                Grid.Column="0"
+                VerticalTextAlignment="Center"
+                HorizontalTextAlignment="Center"
+                FontSize="Large" />
+            <Label
+                Text="To begin your order please select a restaurant"
+                Grid.Row="1"
+                Grid.Column="0"
+                VerticalTextAlignment="Center"
+                HorizontalTextAlignment="Center" />
+            <StackLayout
+                Grid.Row="3"
+                Grid.Column="0">
+                <SearchBar
+                    Text="{Binding EnterRestaurant}"
+                    Placeholder="Search Restaurant"
+                    PlaceholderColor="Gray"
+                    SearchCommand="{Binding searchActivated}"
+                    BackgroundColor="White"
+                    CancelButtonColor="Silver"
+                    />
+                <ListView
+                    ItemsSource="{Binding Suggestions}"
+                    IsVisible="{Binding IsVisible}">
+                    <ListView.Behaviors>
+                        <prismBehaviors:EventToCommandBehavior
+                            EventName="ItemTapped"
+                            Command="{Binding SuggestionTappedCommand}"
+                            EventArgsParameterPath="Item" />
+                    </ListView.Behaviors>
+                </ListView>
+            </StackLayout>
+            <Button
+                Text="Search by Map"
+                Command="{Binding GoToMapCommand}"
+                Grid.Row="2"
+                Grid.Column="0"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand" />
+        </Grid>
+    </StackLayout>
+</ContentPage>

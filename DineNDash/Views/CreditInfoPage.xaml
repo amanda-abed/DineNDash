@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="DineNDash.Views.CreditInfoPage"
+    NavigationPage.HasNavigationBar="false">
+    <ScrollView
+        Padding="15, 15, 15, 15"
+        VerticalOptions="Fill"
+        HorizontalOptions="CenterAndExpand">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Label
+                Text="Payment Information"
+                FontAttributes="Bold"
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                HorizontalOptions="Start"
+                HorizontalTextAlignment="Center"
+                VerticalOptions="Center"
+                VerticalTextAlignment="Center"
+                FontSize="Large"
+                />    
+            <Label
+                Text="Name on Card"
+                Grid.Row="1"
+                Grid.Column="0"
+                />
+            <Entry
+                Placeholder="John Doe"
+                Grid.Row="1"
+                Grid.Column="1"
+                Grid.ColumnSpan="5"
+                Text="{Binding NameEntry}"
+                />
+            <Label
+                Text="Card Type"
+                Grid.Row="2"
+                Grid.Column="0"
+                />
+            <Picker
+                Title="Select a Card"
+                Grid.Row="2"
+                Grid.Column="1"
+                ItemsSource="{Binding CreditCards}"
+                SelectedItem="{Binding SelectedCard}"
+                Grid.ColumnSpan="4"
+                />
+            <Label
+                Text="Card Number"
+                Grid.Row="3"
+                Grid.Column="0"
+                />
+            <Entry
+                Placeholder="XXXXXXXXXXXXXXXX"
+                Grid.Row="3"
+                Grid.Column="1"
+                Grid.ColumnSpan="5"
+                Text="{Binding CardNumberEntry}"
+                />
+            <Label
+                Text="Card Expiration"
+                Grid.Row="4"
+                Grid.Column="0"
+                />
+            <Entry
+                Placeholder="MM"
+                Grid.Row="4"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                HorizontalTextAlignment="Center"
+                Text="{Binding CardMonthEntry}"
+                />
+            <Entry
+                Placeholder="YYYY"
+                HorizontalTextAlignment="Center"
+                Grid.Row="4"
+                Grid.Column="3"
+                Grid.ColumnSpan="2"
+                Text="{Binding CardYearEntry}"
+                />
+            <Label
+                Text="Security Code"
+                Grid.Row="5"
+                Grid.Column="0"
+                />
+            <Entry
+                Placeholder="CVV"
+                Grid.Row="5"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                HorizontalTextAlignment="Center"
+                Text="{Binding CardSecurityEntry}"
+                />    
+            
+            <Label
+                Text="Billing Information"
+                FontAttributes="Bold"
+                Grid.Row="6"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                HorizontalOptions="Start"
+                HorizontalTextAlignment="Center"
+                VerticalOptions="Center"
+                VerticalTextAlignment="Center"
+                FontSize="Large"
+                />
+            <Label
+                Text="Address"
+                Grid.Row="7"
+                Grid.Column="0"
+                />
+            <Entry
+                Placeholder="Bill to Address"
+                Grid.Row="7"
+                Grid.Column="1"
+                Grid.ColumnSpan="5"
+                Text="{Binding AddressEntry}"
+                />
+            <Label
+                Text="City/State"
+                Grid.Row="8"
+                Grid.Column="0"
+                />
+            <Entry
+                Placeholder="City"
+                Grid.Row="8"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                HorizontalTextAlignment="Center"
+                Text="{Binding CityEntry}"
+                />
+            <Entry
+                Placeholder="XX"
+                Grid.Row="8"
+                Grid.Column="3"
+                HorizontalTextAlignment="Center"
+                Text="{Binding StateEntry}"
+                />
+            <Label
+                Text="Postal Code"
+                Grid.Row="9"
+                Grid.Column="0"
+                />
+            <Entry
+                Placeholder="XXXXX"
+                Grid.Row="9"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                HorizontalTextAlignment="Center"
+                Text="{Binding ZipEntry}"
+                />
+            <Button
+                Text="Continue"
+                Grid.Row="10"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                HorizontalOptions="CenterAndExpand"
+                Command="{Binding CreditInfoPageCommand}"
+                />
+            <Button
+                Text="Cancel"
+                Grid.Row="11"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                HorizontalOptions="CenterAndExpand"
+                Command="{Binding GoBackToPaymentPageCommand}"
+                />
+        </Grid>
+    </ScrollView>
+</ContentPage>

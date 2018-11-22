@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="DineNDash.Views.CashPage">
+    <StackLayout
+        Padding="20, 20, 50, 15">
+        <Grid
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label
+                Text="A server will be with your shortly..."
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HorizontalTextAlignment="Center"
+                />
+            <Label
+                Text="Server Code:"
+                Grid.Row="1"
+                Grid.Column="0"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"
+                />
+            <Entry
+                Placeholder="****"
+                Grid.Row="1"
+                Grid.Column="1"
+                IsPassword="true"
+                Text="{Binding SecretCode}"
+                />
+            <Button
+                Text="Next"
+                Grid.Row="2"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Command="{Binding NextPage}"
+                />
+        </Grid>
+    </StackLayout>
+</ContentPage>

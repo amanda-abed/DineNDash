@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="DineNDash.Views.ConfirmationPage"
+    NavigationPage.HasNavigationBar="false">
+    <StackLayout
+        VerticalOptions="CenterAndExpand"
+        HorizontalOptions="CenterAndExpand">
+        <Grid
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Padding="5, 20, 5, 20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Label
+                Text="Thank you for your order! Your food is on its way..."
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Grid.Row="0"
+                Grid.Column="0"
+                />
+            <Button
+                Text="Place Another Order"
+                HorizontalOptions="Center"
+                VerticalOptions="Fill"
+                Command="{Binding AnotherOrder}"
+                Grid.Row="1"
+                Grid.Column="0"
+                />
+            <Button
+                Text="Rate your experience with us!"
+                HorizontalOptions="Center"
+                VerticalOptions="Fill"
+                Command="{Binding RateExperience}"
+                Grid.Row="2"
+                Grid.Column="0"
+                />
+            </Grid>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="DineNDash.Views.TabMealPage">
+    <ContentPage.Content>
+        <Grid
+            HorizontalOptions="Center"
+            VerticalOptions="Fill">
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    Height="auto" />
+                <RowDefinition
+                    Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+                    Width="auto" />
+                <ColumnDefinition
+                    Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image
+                Grid.Row="0"
+                Grid.Column="0"
+                Source="combo1.png"
+            />
+            <Label
+                Text="{Binding PlaceOrder}"
+                Grid.Row="0"
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HorizontalTextAlignment="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding TapToOrder}" />
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
