@@ -4,5 +4,38 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="DineNDash.Views.TabIndivItemPage">
     <ContentPage.Content>
+        <Grid
+            HorizontalOptions="Center"
+            VerticalOptions="Fill">
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    Height="auto" />
+                <RowDefinition
+                    Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+                    Width="auto" />
+                <ColumnDefinition
+                    Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image
+                Grid.Row="0"
+                Grid.Column="0"
+                Source="indivitem.png"
+            />
+            <Label
+                Text="{Binding PlaceOrder}"
+                Grid.Row="0"
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HorizontalTextAlignment="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding TapToOrder}" />
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
