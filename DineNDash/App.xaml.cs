@@ -40,6 +40,7 @@ namespace DineNDash
             containerRegistry.RegisterForNavigation<TabMealPage, TabMealPageViewModel>();
             containerRegistry.RegisterForNavigation<TabIndivItemPage, TabIndivItemPageViewModel>();
             containerRegistry.RegisterForNavigation<TabDrinkPage, TabDrinkPageViewModel>();
+            containerRegistry.RegisterForNavigation<RestaurantSidePage, RestaurantSidePageViewModel>();
             containerRegistry.RegisterSingleton<IRepository, Repository>();
         }
 

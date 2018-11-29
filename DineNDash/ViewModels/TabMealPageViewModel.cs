@@ -28,25 +28,6 @@ namespace DineNDash.ViewModels
         {
             get { return place_order; }
             set { SetProperty(ref place_order, value); }
-        private string place_order1;
-        public string PlaceOrder1
-        {
-            get { return place_order1; }
-            set { SetProperty(ref place_order1, value); }
-        }
-
-        private string place_order2;
-        public string PlaceOrder2
-        {
-            get { return place_order2; }
-            set { SetProperty(ref place_order2, value); }
-        }
-
-        private string place_order3;
-        public string PlaceOrder3
-        {
-            get { return place_order3; }
-            set { SetProperty(ref place_order3, value); }
         }
         public string PlaceOrder1
         {
@@ -93,6 +74,8 @@ namespace DineNDash.ViewModels
                 navParams.Add("ItemAdded", newItem);
                 await Task.Delay(1);
             }
+
+            //await nav_service.NavigateAsync("CartPage", navParams);
         }
         private async void AddToCart1()
         {
@@ -155,4 +138,3 @@ namespace DineNDash.ViewModels
         }
     }
 }
-

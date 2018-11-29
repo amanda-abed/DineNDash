@@ -56,17 +56,17 @@ namespace DineNDash.ViewModels
         List<string> restaurants = new List<string>
         {
             "In-N-Out Burger"
+        };
 
-
-        //public List<string> MyRestaurant
+        //private List<string> my_restaurant = new List<string>();
         //public List<string> MyRestaurant
         //{ get { return my_restaurant; } set { SetProperty(ref my_restaurant, value); } }
 
         private List<string> _suggestions = new List<string>();
         public List<string> Suggestions
+        { get { return _suggestions; } set { SetProperty(ref _suggestions, value); } }
 
         public DineNDashHomePageViewModel(INavigationService navigationService)
-        {
         {
             Debug.WriteLine($"**** {this.GetType().Name}: ctor");
 
@@ -95,12 +95,12 @@ namespace DineNDash.ViewModels
             }
             else
             {
+                IsVisible = false;
+            }
         }
 
-        }
-
-            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnSuggestionTapped)}:  {suggestionTapped}");
-
+        private async void OnSuggestionTapped(string suggestionTapped)
+        {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnSuggestionTapped)}:  {suggestionTapped}");
 
             await _navigationService.NavigateAsync("ChooseSeatingPage", null);
