@@ -24,7 +24,12 @@ namespace DineNDash.ViewModels
             Label = $"In-N-Out",
             Position = new Position(33.1372, -117.1772)//args.Point
         });
-    });
+            Pins.Add(new Pin
+            {
+                Label = $"Chick-fil-A",
+                Position = new Position(33.1370, -117.1778)//args.Point
+            });
+        });
 
     INavigationService _navigationService;
         public DelegateCommand GoToRestaurantSide { get; set; }
@@ -55,7 +60,8 @@ namespace DineNDash.ViewModels
 
         List<string> restaurants = new List<string>
         {
-            "In-N-Out Burger"
+            "In-N-Out Burger",
+            "Chick-fil-A"
         };
 
         //private List<string> my_restaurant = new List<string>();

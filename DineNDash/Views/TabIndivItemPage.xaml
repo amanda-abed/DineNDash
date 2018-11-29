@@ -2,16 +2,23 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="DineNDash.Views.TabIndivItemPage">
+    x:Class="DineNDash.Views.TabIndivItemPage"
+    BackgroundImage="menuOneBackground.png">
     <ContentPage.Content>
         <Grid
             HorizontalOptions="Center"
             VerticalOptions="Fill">
             <Grid.RowDefinitions>
                 <RowDefinition
-                    Height="auto" />
+                    Height="*" />
                 <RowDefinition
-                    Height="auto" />
+                    Height="*" />
+                <RowDefinition
+                    Height="*" />
+                <RowDefinition
+                    Height="*" />
+                <RowDefinition
+                    Height="*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition
@@ -20,6 +27,16 @@
                     Width="*" />
             </Grid.ColumnDefinitions>
             <Image
+                Grid.Row="0"
+                Grid.Column="0"
+                Source="indivitem.png"
+            />
+             <Image
+                Grid.Row="1"
+                Grid.Column="0"
+                Source="indivitem.png"
+            />
+             <Image
                 Grid.Row="2"
                 Grid.Column="0"
                 Source="indivitem.png"
@@ -29,19 +46,10 @@
                 Grid.Column="0"
                 Source="indivitem.png"
             />
-             <Image
-                Grid.Row="4"
-                Grid.Column="0"
-                Source="indivitem.png"
-            />
-             <Image
-                Grid.Row="5"
-                Grid.Column="0"
-                Source="indivitem.png"
-            />
             <Label
                 Text="{Binding PlaceOrder}"
-                Grid.Row="2"
+                TextColor="White"
+                Grid.Row="0"
                 Grid.Column="1"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
@@ -53,7 +61,8 @@
             </Label>
               <Label
                 Text="{Binding PlaceOrder1}"
-                Grid.Row="3"
+                TextColor="White"
+                Grid.Row="1"
                 Grid.Column="1"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
@@ -65,7 +74,8 @@
             </Label>
               <Label
                 Text="{Binding PlaceOrder2}"
-                Grid.Row="4"
+                TextColor="White"
+                Grid.Row="2"
                 Grid.Column="1"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
@@ -77,7 +87,8 @@
             </Label>
               <Label
                 Text="{Binding PlaceOrder3}"
-                Grid.Row="5"
+                TextColor="White"
+                Grid.Row="3"
                 Grid.Column="1"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
@@ -87,6 +98,15 @@
                         Command="{Binding TapToOrder3}" />
                 </Label.GestureRecognizers>
             </Label>
+            <Image
+                Source="inNOutLogo.png"
+                Grid.Row="4"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                VerticalOptions="End"
+                WidthRequest="80"
+                HeightRequest="80"
+                />
         </Grid>
     </ContentPage.Content>
 </ContentPage>

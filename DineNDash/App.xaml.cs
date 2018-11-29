@@ -21,7 +21,7 @@ namespace DineNDash
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnInitialized)})");
             InitializeComponent();
 
-            await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(GetStartedPage)}");
+            await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MenuOneContainerPage)}");
         }
 
         protected override void RegisterTypes(Prism.Ioc.IContainerRegistry containerRegistry)

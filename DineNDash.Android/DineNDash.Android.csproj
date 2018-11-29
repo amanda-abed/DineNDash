@@ -117,6 +117,8 @@
     <AndroidResource Include="Resources\drawable\logo.png" />
     <AndroidResource Include="Resources\drawable\Telegram.png" />
     <AndroidResource Include="Resources\drawable\creatorsImg.png" />
+    <AndroidResource Include="Resources\drawable\menuOneBackground.png" />
+    <AndroidResource Include="Resources\drawable\inNOutLogo.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

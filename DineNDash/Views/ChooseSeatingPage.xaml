@@ -3,7 +3,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="DineNDash.Views.ChooseSeatingPage"
-    >
+    BackgroundImage="Telegram.png">
     <Grid
         HorizontalOptions="CenterAndExpand"
         VerticalOptions="Fill">
@@ -19,6 +19,8 @@
             Grid.Row="0"
             Grid.Column="0"
             Text="Please Select Your Seat"
+            TextColor="White"
+            FontSize="35"
             FontAttributes="Bold"
             HorizontalOptions="Center"
             VerticalOptions="End"
@@ -36,6 +38,9 @@
             Grid.Column="0"
             Command="{Binding GoToMenuPage}"
             Text="Go To Menu"
+            TextColor="White"
+            FontSize="20"
+            FontAttributes="Bold"
             HorizontalOptions="Center"
             VerticalOptions="Start" />
     </Grid>

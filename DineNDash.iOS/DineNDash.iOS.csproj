@@ -202,5 +202,7 @@
     <BundleResource Include="Resources\logo.png" />
     <BundleResource Include="Resources\Telegram.png" />
     <BundleResource Include="Resources\creatorsImg.png" />
+    <BundleResource Include="Resources\menuOneBackground.png" />
+    <BundleResource Include="Resources\inNOutLogo.png" />
   </ItemGroup>
 </Project>
