@@ -5,5 +5,12 @@
     xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
     x:Class="DineNDash.App">
     <Application.Resources>
+        <Style x:Key="PageStyle" TargetType="ContentPage">
+            <Setter Property="BackgroundColor" Value="#66B9BF" />
+          </Style>
+        <Style x:Key="NavBarStyle" TargetType="NavigationPage">
+            <Setter Property="BarTextColor" Value="White" />
+            <Setter Property="BarBackgroundColor" Value="#07889B" />
+          </Style>
     </Application.Resources>
 </prism:PrismApplication>

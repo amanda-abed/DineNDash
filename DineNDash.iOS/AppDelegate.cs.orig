@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -33,12 +33,15 @@ namespace DineNDash.iOS
             Xamarin.FormsMaps.Init();
 
             ZXing.Net.Mobile.Forms.iOS.Platform.Init();
-            Xamarin.FormsGoogleMaps.Init("AIzaSyAmReieSp33ltXnORIKa4TM8GSnQUG1ZRA");
-            Xamarin.FormsGoogleMapsBindings.Init();
+<<<<<<< HEAD
 
 
             new SfRatingRenderer();
 
+=======
+            Xamarin.FormsGoogleMaps.Init("AIzaSyAmReieSp33ltXnORIKa4TM8GSnQUG1ZRA");
+            Xamarin.FormsGoogleMapsBindings.Init();
+>>>>>>> added google maps
             LoadApplication(new App());
 
 

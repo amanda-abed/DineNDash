@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Diagnostics;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -21,15 +21,15 @@ namespace DineNDash.ViewModels
         public DelegateCommand TapToOrder1 { get; set; }
         public DelegateCommand TapToOrder2 { get; set; }
 
+<<<<<<< HEAD
         private string place_order;
         private string place_order1;
         private string place_order2;
         public string PlaceOrder
-        {
-            get { return place_order; }
-            set { SetProperty(ref place_order, value); }
+=======
         private string place_order1;
         public string PlaceOrder1
+>>>>>>> added google maps
         {
             get { return place_order1; }
             set { SetProperty(ref place_order1, value); }
@@ -65,10 +65,15 @@ namespace DineNDash.ViewModels
             page_service = pageDialogService;
             _repo = repository;
 
+<<<<<<< HEAD
             PlaceOrder = "Combo #1\nDouble-Double Burger, French Fries, and Medium Drink \n $6.15";
             PlaceOrder1 = "Combo #2\nCheeseBurger, French Fries, and Medium Drink \n $5.80";
             PlaceOrder2 = "Combo #3\nHamBurger, French Fries, and Medium Drink \n $5.50";
 
+=======
+            PlaceOrder1 = "Combo #1\nDouble-Double Burger, French Fries, and Medium Drink \n $6.70";
+      
+>>>>>>> added google maps
             TapToOrder = new DelegateCommand(AddToCart);
             TapToOrder1 = new DelegateCommand(AddToCart1);
             TapToOrder2 = new DelegateCommand(AddToCart2);
@@ -85,7 +90,7 @@ namespace DineNDash.ViewModels
             {
                 OrderItem newItem = new OrderItem
                 {
-                    Item = this.PlaceOrder
+                    Item = this.PlaceOrder1
                 };
 
                 await _repo.AddItem(newItem);
