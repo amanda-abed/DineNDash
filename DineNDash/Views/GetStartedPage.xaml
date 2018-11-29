@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="DineNDash.Views.GetStartedPage"
+    BackgroundImage="Telegram.png"
+    NavigationPage.HasNavigationBar="false">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Image
+            Grid.Row="0"
+            Grid.Column="0"
+            HorizontalOptions="Center"
+            VerticalOptions="EndAndExpand"
+            Source="logo.png"
+            />
+        <Button
+            Text="Let's Get Started!"
+            Grid.Row="1"
+            Grid.Column="0"
+            Command="{Binding GetStartedCommand}"
+            TextColor="White"
+            FontSize="25"
+            VerticalOptions="EndAndExpand"
+            />
+        <Button
+            Text="Learn More"
+            Grid.Row="2"
+            Grid.Column="0"
+            Command="{Binding LearnMoreCommand}"
+            TextColor="White"
+            FontSize="25"
+            VerticalOptions="StartAndExpand"
+            />
+    </Grid>
+</ContentPage>

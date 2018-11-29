@@ -114,6 +114,9 @@
     <AndroidResource Include="Resources\drawable\shoppingcart.png" />
     <AndroidResource Include="Resources\drawable\DineNDashAppIcon.png" />
     <AndroidResource Include="Resources\drawable\MapIcon.png" />
+    <AndroidResource Include="Resources\drawable\logo.png" />
+    <AndroidResource Include="Resources\drawable\Telegram.png" />
+    <AndroidResource Include="Resources\drawable\creatorsImg.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

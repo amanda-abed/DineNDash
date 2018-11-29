@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="DineNDash.Views.LearnMorePage"
+    BackgroundImage="Telegram.png">
+    <ScrollView>
+        <Grid
+            Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    Height="2*" />
+                <RowDefinition
+                    Height="*" />
+                <RowDefinition
+                    Height="2*" />
+                <RowDefinition
+                    Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+                    Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image
+                Grid.Row="0"
+                Grid.Column="0"
+                Source="creatorsImg.png" />
+            <Label
+                Text="Hungry but in a Rush?"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="End"
+                TextColor="White"
+                FontAttributes="Bold"
+                FontSize="40"
+                Grid.Row="1"
+                Grid.Column="0" />
+            <Label
+                TextColor="White"
+                FontSize="25"
+                Grid.Row="2"
+                Grid.Column="0"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"
+                Text="Eliminate lines, wait time, and order on the go with Dine &amp; Dash. New to the market with extensible feautres, our goal is to achieve customer satisfaction and modernize business components." />
+            <Label
+                TextColor="White"
+                FontSize="20"
+                Grid.Row="3"
+                Grid.Column="0"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"
+                Text="Creators: Amanda Abedmamoore, Ryan Corbin, Dragan Lukic" />
+        </Grid>
+    </ScrollView>
+</ContentPage>

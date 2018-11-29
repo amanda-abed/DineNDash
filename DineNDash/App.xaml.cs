@@ -21,7 +21,7 @@ namespace DineNDash
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnInitialized)})");
             InitializeComponent();
 
-            await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainPage)}");
+            await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(GetStartedPage)}");
         }
 
         protected override void RegisterTypes(Prism.Ioc.IContainerRegistry containerRegistry)
@@ -41,6 +41,8 @@ namespace DineNDash
             containerRegistry.RegisterForNavigation<TabIndivItemPage, TabIndivItemPageViewModel>();
             containerRegistry.RegisterForNavigation<TabDrinkPage, TabDrinkPageViewModel>();
             containerRegistry.RegisterForNavigation<RestaurantSidePage, RestaurantSidePageViewModel>();
+            containerRegistry.RegisterForNavigation<GetStartedPage, GetStartedPageViewModel>();
+            containerRegistry.RegisterForNavigation<LearnMorePage, LearnMorePageViewModel>();
             containerRegistry.RegisterSingleton<IRepository, Repository>();
         }
 

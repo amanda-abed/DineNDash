@@ -7,10 +7,10 @@
     xmlns:prismBehaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
     xmlns:googleMaps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
     xmlns:bindings="clr-namespace:Xamarin.Forms.GoogleMaps.Bindings;assembly=Xamarin.Forms.GoogleMaps.Bindings"
-    NavigationPage.HasNavigationBar="false"
-    Style="{StaticResource PageStyle}">
+    BackgroundImage="Telegram.png">
+    <!--Style="{StaticResource PageStyle}">-->
     <StackLayout
-        Padding="10,50,10,10">
+        Padding="0, 15, 0, 15">
         <Grid
             VerticalOptions="StartAndExpand"
             HorizontalOptions="Center">
@@ -18,37 +18,30 @@
                 <RowDefinition
                     Height="*" />
                 <RowDefinition
-                    Height="*" />
-                <RowDefinition
-                    Height="*" />
+                    Height="2*" />
                 <RowDefinition
                     Height="5*" />
                 <RowDefinition
-                    Height="*" />
+                    Height="2*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition
                     Width="auto" />
             </Grid.ColumnDefinitions>
+           
             <Label
-                Text="Welcome to Dine &amp; Dash!"
+                Text="To begin your order please select a restaurant"
                 Grid.Row="0"
                 Grid.Column="0"
                 VerticalTextAlignment="Center"
                 HorizontalTextAlignment="Center"
-                FontSize="30" 
-                TextColor="White"
-                FontAttributes="Bold"/>
-            <Label
-                Text="To begin your order please select a restaurant"
-                Grid.Row="1"
-                Grid.Column="0"
-                VerticalTextAlignment="Center"
-                HorizontalTextAlignment="Center"
+                FontSize="20"
+                FontAttributes="Bold"
                 TextColor="White"/>
             <StackLayout
-                Grid.Row="2"
-                Grid.Column="0">
+                Grid.Row="1"
+                Grid.Column="0"
+                Padding="0, 10, 0, 10">
                 <SearchBar
                     Text="{Binding EnterRestaurant}"
                     Placeholder="Search Restaurant"
@@ -71,7 +64,7 @@
                      InitialCameraUpdate="33.1372, -117.1772, 13, 30, 0"
                      MapType="Street"
                      VerticalOptions="FillAndExpand"
-                     Grid.Row="3">
+                     Grid.Row="2">
                     <googleMaps:Map.Behaviors>
                         <bindings:BindingPinsBehavior Value="{Binding Pins}"/>    
                         <bindings:MapClickedToCommandBehavior Command="{Binding MapClickedCommand}"/>
@@ -80,10 +73,10 @@
             <Button
                 Text="Restaurant Side"
                 Command="{Binding GoToRestaurantSide}"
-                Grid.Row="4"
+                Grid.Row="3"
                 Grid.Column="0"
                 HorizontalOptions="CenterAndExpand"
-                VerticalOptions="CenterAndExpand"
+                VerticalOptions="End"
                 TextColor="White"/>
         </Grid>
     </StackLayout>
