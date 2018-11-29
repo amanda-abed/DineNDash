@@ -20,13 +20,23 @@
                     Width="*" />
             </Grid.ColumnDefinitions>
             <Image
-                Grid.Row="0"
+                Grid.Row="2"
                 Grid.Column="0"
                 Source="combo1.png"
             />
+             <Image
+                Grid.Row="3"
+                Grid.Column="0"
+                Source="combo2.png"
+            />
+             <Image
+                Grid.Row="4"
+                Grid.Column="0"
+                Source="combo3.png"
+            />
             <Label
                 Text="{Binding PlaceOrder}"
-                Grid.Row="0"
+                Grid.Row="2"
                 Grid.Column="1"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
@@ -34,6 +44,30 @@
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer
                         Command="{Binding TapToOrder}" />
+                </Label.GestureRecognizers>
+            </Label>
+              <Label
+                Text="{Binding PlaceOrder1}"
+                Grid.Row="3"
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HorizontalTextAlignment="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding TapToOrder1}" />
+                </Label.GestureRecognizers>
+            </Label>
+              <Label
+                Text="{Binding PlaceOrder2}"
+                Grid.Row="4"
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HorizontalTextAlignment="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding TapToOrder2}" />
                 </Label.GestureRecognizers>
             </Label>
         </Grid>
