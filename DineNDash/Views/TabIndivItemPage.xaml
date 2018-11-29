@@ -24,9 +24,60 @@
                 Grid.Column="0"
                 Source="indivitem.png"
             />
+             <Image
+                Grid.Row="1"
+                Grid.Column="0"
+                Source="indivitem.png"
+            />
+             <Image
+                Grid.Row="2"
+                Grid.Column="0"
+                Source="indivitem.png"
+            />
+             <Image
+                Grid.Row="3"
+                Grid.Column="0"
+                Source="indivitem.png"
+            />
             <Label
                 Text="{Binding PlaceOrder}"
                 Grid.Row="0"
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HorizontalTextAlignment="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding TapToOrder}" />
+                </Label.GestureRecognizers>
+            </Label>
+              <Label
+                Text="{Binding PlaceOrder}"
+                Grid.Row="1"
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HorizontalTextAlignment="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding TapToOrder}" />
+                </Label.GestureRecognizers>
+            </Label>
+              <Label
+                Text="{Binding PlaceOrder}"
+                Grid.Row="2"
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HorizontalTextAlignment="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding TapToOrder}" />
+                </Label.GestureRecognizers>
+            </Label>
+              <Label
+                Text="{Binding PlaceOrder}"
+                Grid.Row="3"
                 Grid.Column="1"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
