@@ -20,58 +20,28 @@
                     Width="*" />
             </Grid.ColumnDefinitions>
             <Image
-                Grid.Row="0"
-                Grid.Column="0"
-                Source="drink.png"
-            />
-              <Image
-                Grid.Row="1"
-                Grid.Column="0"
-                Source="drink.png"
-            />
-              <Image
                 Grid.Row="2"
                 Grid.Column="0"
                 Source="drink.png"
             />
-             <Image
+              <Image
                 Grid.Row="3"
+                Grid.Column="0"
+                Source="drink.png"
+            />
+              <Image
+                Grid.Row="4"
+                Grid.Column="0"
+                Source="drink.png"
+            />
+             <Image
+                Grid.Row="5"
                 Grid.Column="0"
                 Source="drink.png"
             />
             
             <Label
                 Text="{Binding PlaceOrder}"
-                Grid.Row="0"
-                Grid.Column="1"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                HorizontalTextAlignment="Center">
-                
-                <Label.GestureRecognizers>
-                    <TapGestureRecognizer
-                        Command="{Binding TapToOrder}" />
-                    
-                </Label.GestureRecognizers>
-                
-            </Label>
-             <Label
-                Text="{Binding PlaceOrder}"
-                Grid.Row="1"
-                Grid.Column="1"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                HorizontalTextAlignment="Center">
-                
-                <Label.GestureRecognizers>
-                    <TapGestureRecognizer
-                        Command="{Binding TapToOrder}" />
-                    
-                </Label.GestureRecognizers>
-                
-            </Label>
-             <Label
-                Text="{Binding PlaceOrder}"
                 Grid.Row="2"
                 Grid.Column="1"
                 HorizontalOptions="Center"
@@ -86,7 +56,7 @@
                 
             </Label>
              <Label
-                Text="{Binding PlaceOrder}"
+                Text="{Binding PlaceOrder1}"
                 Grid.Row="3"
                 Grid.Column="1"
                 HorizontalOptions="Center"
@@ -95,7 +65,37 @@
                 
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer
-                        Command="{Binding TapToOrder}" />
+                        Command="{Binding TapToOrder1}" />
+                    
+                </Label.GestureRecognizers>
+                
+            </Label>
+             <Label
+                Text="{Binding PlaceOrder2}"
+                Grid.Row="4"
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HorizontalTextAlignment="Center">
+                
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding TapToOrder2}" />
+                    
+                </Label.GestureRecognizers>
+                
+            </Label>
+             <Label
+                Text="{Binding PlaceOrder3}"
+                Grid.Row="5"
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HorizontalTextAlignment="Center">
+                
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding TapToOrder3}" />
                     
                 </Label.GestureRecognizers>
                 
