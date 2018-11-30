@@ -29,22 +29,22 @@
             <Image
                 Grid.Row="0"
                 Grid.Column="0"
-                Source="indivitem.png"
+                Source="fries.png"
             />
              <Image
                 Grid.Row="1"
                 Grid.Column="0"
-                Source="indivitem.png"
+                Source="hamburger.png"
             />
              <Image
                 Grid.Row="2"
                 Grid.Column="0"
-                Source="indivitem.png"
+                Source="cheeseburger.png"
             />
              <Image
                 Grid.Row="3"
                 Grid.Column="0"
-                Source="indivitem.png"
+                Source="doubledouble.png"
             />
             <Label
                 Text="{Binding PlaceOrder}"

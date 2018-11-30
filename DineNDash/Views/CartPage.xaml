@@ -4,14 +4,16 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="DineNDash.Views.CartPage"
     IsBusy="{Binding ShowIsBusySpinner}"
+    Title="Cart"
     x:Name="Cart">
     <StackLayout>
         <ListView
             ItemsSource="{Binding FoodItem}"
             IsRefreshing="{Binding ShowIsBusySpinner}"
             IsPullToRefreshEnabled="true"
-            RefreshCommand="{Binding PullToRefreshCommand}">
-            <ListView.Header>
+            RefreshCommand="{Binding PullToRefreshCommand}"
+            BackgroundColor="#ffaf4e">
+          <!--  <ListView.Header>
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition
@@ -36,7 +38,7 @@
                         HorizontalTextAlignment="Center"
                         />
                 </Grid>
-            </ListView.Header>
+            </ListView.Header>-->
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell
@@ -55,6 +57,7 @@
             <ListView.Footer>
                 <Button
                     Text="Continue to Checkout"
+                    TextColor="Black"
                     Command="{Binding CheckoutCommand}"
                     HorizontalOptions="Center"
                     VerticalOptions="Center" />

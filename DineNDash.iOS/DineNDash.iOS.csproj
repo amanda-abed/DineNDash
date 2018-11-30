@@ -204,5 +204,12 @@
     <BundleResource Include="Resources\creatorsImg.png" />
     <BundleResource Include="Resources\menuOneBackground.png" />
     <BundleResource Include="Resources\inNOutLogo.png" />
+    <BundleResource Include="Resources\paymentBackground.jpeg" />
+    <BundleResource Include="Resources\fries.png" />
+    <BundleResource Include="Resources\doubledouble.png" />
+    <BundleResource Include="Resources\hamburger.png" />
+    <BundleResource Include="Resources\cheeseburger.png" />
+    <BundleResource Include="Resources\shakes.png" />
+    <BundleResource Include="Resources\drinks.png" />
   </ItemGroup>
 </Project>

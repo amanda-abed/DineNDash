@@ -2,7 +2,8 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="DineNDash.Views.PaymentPage">
+    x:Class="DineNDash.Views.PaymentPage"
+    BackgroundImage="paymentBackground.jpeg">
     <StackLayout
         VerticalOptions="CenterAndExpand"
         HorizontalOptions="CenterAndExpand">
@@ -43,6 +44,8 @@
             
             <Button
                 Text="Continue"
+                TextColor="Black"
+                FontAttributes="Bold"
                 Grid.Row="2"
                 Grid.Column="1"
                 Command="{Binding ContinueToPayment}"

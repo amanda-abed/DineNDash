@@ -4,13 +4,15 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:rating="clr-namespace:Syncfusion.SfRating.XForms;assembly=Syncfusion.SfRating.XForms"
     x:Class="DineNDash.Views.RatingsPage"
-     xmlns:Input="using:Syncfusion.UI.Xaml.Controls.Input">  
-  <StackLayout Padding="0,50,0,10">
+    BackgroundImage="paymentBackground.jpeg"
+    xmlns:Input="using:Syncfusion.UI.Xaml.Controls.Input">
+    <StackLayout
+        Padding="0,50,0,10">
         <Frame>
-                                   
-       
-            <rating:SfRating x:Name="rating" ItemCount="5" ItemSpacing="20" />
- 
-            </Frame>
-  </StackLayout>
+            <rating:SfRating
+                x:Name="rating"
+                ItemCount="5"
+                ItemSpacing="20" />
+        </Frame>
+    </StackLayout>
 </ContentPage>

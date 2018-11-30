@@ -54,7 +54,7 @@ namespace DineNDash.ViewModels
 
             PlaceOrder = "Fries \n $1.80";
             PlaceOrder1 = "Hamburger \n 2.50";
-            PlaceOrder2 = "CheeseBurger \n $2.80";
+            PlaceOrder2 = "Cheeseburger \n $2.80";
             PlaceOrder3 = "Double-Double \n $3.30";
 
             TapToOrder = new DelegateCommand(AddToCart);

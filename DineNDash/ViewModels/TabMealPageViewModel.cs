@@ -47,8 +47,8 @@ namespace DineNDash.ViewModels
             _repo = repository;
 
             PlaceOrder = "Combo #1\nDouble-Double Burger, French Fries, and Medium Drink \n $6.15";
-            PlaceOrder1 = "Combo #2\nCheeseBurger, French Fries, and Medium Drink \n $5.80";
-            PlaceOrder2 = "Combo #3\nHamBurger, French Fries, and Medium Drink \n $5.50";
+            PlaceOrder1 = "Combo #2\nCheeseburger, French Fries, and Medium Drink \n $5.80";
+            PlaceOrder2 = "Combo #3\nHamburger, French Fries, and Medium Drink \n $5.50";
 
             TapToOrder = new DelegateCommand(AddToCart);
             TapToOrder1 = new DelegateCommand(AddToCart1);

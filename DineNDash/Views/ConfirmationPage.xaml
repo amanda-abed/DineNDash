@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="DineNDash.Views.ConfirmationPage"
     NavigationPage.HasNavigationBar="false"
-    BackgroundImage="Telegram.png">
+    BackgroundImage="paymentBackground.jpeg">
     <StackLayout
         VerticalOptions="CenterAndExpand"
         HorizontalOptions="CenterAndExpand">
@@ -29,6 +29,9 @@
                 />
             <Button
                 Text="Place Another Order"
+                TextColor="Black"
+                FontAttributes="Bold"
+                FontSize="20"
                 HorizontalOptions="Center"
                 VerticalOptions="Fill"
                 Command="{Binding AnotherOrder}"
@@ -37,6 +40,9 @@
                 />
             <Button
                 Text="Rate your experience with us!"
+                TextColor="Black"
+                FontAttributes="Bold"
+                FontSize="20"
                 HorizontalOptions="Center"
                 VerticalOptions="Fill"
                 Command="{Binding RateExperience}"

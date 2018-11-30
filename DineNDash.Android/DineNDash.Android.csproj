@@ -119,6 +119,13 @@
     <AndroidResource Include="Resources\drawable\creatorsImg.png" />
     <AndroidResource Include="Resources\drawable\menuOneBackground.png" />
     <AndroidResource Include="Resources\drawable\inNOutLogo.png" />
+    <AndroidResource Include="Resources\drawable\paymentBackground.jpeg" />
+    <AndroidResource Include="Resources\drawable\fries.png" />
+    <AndroidResource Include="Resources\drawable\doubledouble.png" />
+    <AndroidResource Include="Resources\drawable\hamburger.png" />
+    <AndroidResource Include="Resources\drawable\cheeseburger.png" />
+    <AndroidResource Include="Resources\drawable\shakes.png" />
+    <AndroidResource Include="Resources\drawable\drinks.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

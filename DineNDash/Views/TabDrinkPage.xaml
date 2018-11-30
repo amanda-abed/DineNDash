@@ -29,22 +29,22 @@
             <Image
                 Grid.Row="0"
                 Grid.Column="0"
-                Source="drink.png"
+                Source="shakes.png"
             />
               <Image
                 Grid.Row="1"
                 Grid.Column="0"
-                Source="drink.png"
+                Source="shakes.png"
             />
               <Image
                 Grid.Row="2"
                 Grid.Column="0"
-                Source="drink.png"
+                Source="shakes.png"
             />
              <Image
                 Grid.Row="3"
                 Grid.Column="0"
-                Source="drink.png"
+                Source="drinks.png"
             />
             
             <Label

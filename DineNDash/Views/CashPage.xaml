@@ -3,7 +3,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="DineNDash.Views.CashPage"
-    BackgroundImage="Telegram.png">
+    BackgroundImage="paymentBackground.jpeg">
     <StackLayout
         Padding="20, 20, 50, 15">
         <Grid
@@ -45,6 +45,8 @@
                 />
             <Button
                 Text="Next"
+                TextColor="Black"
+                FontAttributes="Bold"
                 Grid.Row="2"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
