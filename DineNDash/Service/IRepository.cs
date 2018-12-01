@@ -19,5 +19,7 @@ namespace DineNDash.Services
         Task AddItem(OrderItem newOrderItem);
 
         Task RemoveItem(OrderItem removeOrderItem);
+
+        Task RemoveAllItems(OrderItem removeAllItems);
     }
 }

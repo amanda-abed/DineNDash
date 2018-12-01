@@ -26,8 +26,8 @@ namespace DineNDash.ViewModels
         });
             Pins.Add(new Pin
             {
-                Label = $"Chick-fil-A",
-                Position = new Position(33.1370, -117.1778)//args.Point
+                Label = $"Subway",
+                Position = new Position(33.141546, -117.191186)//args.Point
             });
         });
 
@@ -61,7 +61,7 @@ namespace DineNDash.ViewModels
         List<string> restaurants = new List<string>
         {
             "In-N-Out Burger",
-            "Chick-fil-A"
+            "Subway"
         };
 
         //private List<string> my_restaurant = new List<string>();
@@ -109,8 +109,16 @@ namespace DineNDash.ViewModels
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnSuggestionTapped)}:  {suggestionTapped}");
 
-            await _navigationService.NavigateAsync("ChooseSeatingPage", null);
-            IsVisible = false;
+            if (suggestionTapped == "In-N-Out Burger")
+            {
+                await _navigationService.NavigateAsync("ChooseSeatingPage", null);
+                IsVisible = false;
+            }
+            else if(suggestionTapped == "Subway")
+            {
+                await _navigationService.NavigateAsync("SubwaySeatPage", null);
+                IsVisible = false;
+            }
         }
 
         //private void GoToMap()

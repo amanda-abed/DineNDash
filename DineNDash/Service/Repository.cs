@@ -68,5 +68,15 @@ namespace DineNDash.Services
             itemFromSomeDataSource.Remove(removeOrderItem);
             await Task.Delay(500);
         }
+
+        public async Task RemoveAllItems(OrderItem removeAllItems)
+        {
+            itemFromSomeDataSource = new List<OrderItem>();
+
+            if (itemFromSomeDataSource != null)
+            {
+                itemFromSomeDataSource.Remove(removeAllItems);
+            }
+        }
     }
 }

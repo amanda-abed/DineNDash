@@ -211,5 +211,17 @@
     <BundleResource Include="Resources\cheeseburger.png" />
     <BundleResource Include="Resources\shakes.png" />
     <BundleResource Include="Resources\drinks.png" />
+    <BundleResource Include="Resources\sub.png" />
+    <BundleResource Include="Resources\subwayBackground.png" />
+    <BundleResource Include="Resources\milk.png" />
+    <BundleResource Include="Resources\chips.png" />
+    <BundleResource Include="Resources\subwaydrink.png" />
+    <BundleResource Include="Resources\cookies.png" />
+    <BundleResource Include="Resources\subwayLogo.png" />
+    <BundleResource Include="Resources\turkey.png" />
+    <BundleResource Include="Resources\club.png" />
+    <BundleResource Include="Resources\chicken.png" />
+    <BundleResource Include="Resources\tuna.png" />
+    <BundleResource Include="Resources\veggie.png" />
   </ItemGroup>
 </Project>

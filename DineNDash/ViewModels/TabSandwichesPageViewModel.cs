@@ -11,7 +11,7 @@ using Prism.Services;
 
 namespace DineNDash.ViewModels
 {
-    public class TabIndivItemPageViewModel : BindableBase, INavigationAware
+    public class TabSandwichesPageViewModel : BindableBase, INavigationAware
     {
         INavigationService nav_service;
         IPageDialogService page_service;
@@ -21,11 +21,13 @@ namespace DineNDash.ViewModels
         public DelegateCommand TapToOrder1 { get; set; }
         public DelegateCommand TapToOrder2 { get; set; }
         public DelegateCommand TapToOrder3 { get; set; }
+        public DelegateCommand TapToOrder4 { get; set; }
 
         private string place_order;
         private string place_order1;
         private string place_order2;
         private string place_order3;
+        private string place_order4;
         public string PlaceOrder
         {
             get { return place_order; }
@@ -46,21 +48,28 @@ namespace DineNDash.ViewModels
             get { return place_order3; }
             set { SetProperty(ref place_order3, value); }
         }
-        public TabIndivItemPageViewModel(INavigationService navigationService, IRepository repository, IPageDialogService pageDialogService)
+        public string PlaceOrder4
+        {
+            get { return place_order4; }
+            set { SetProperty(ref place_order4, value); }
+        }
+        public TabSandwichesPageViewModel(INavigationService navigationService, IRepository repository, IPageDialogService pageDialogService)
         {
             nav_service = navigationService;
             page_service = pageDialogService;
             _repo = repository;
 
-            PlaceOrder = "Fries \n $1.80";
-            PlaceOrder1 = "Hamburger \n $2.50";
-            PlaceOrder2 = "Cheeseburger \n $2.80";
-            PlaceOrder3 = "Double-Double \n $3.30";
+            PlaceOrder = "Turkey Breast \n Footlong: $6.75 \n 6-inch: $4.25";
+            PlaceOrder1 = "Subway Club \n Footlong: $7.75 \n 6-inch: $4.75";
+            PlaceOrder2 = "Oven Roasted Chicken \n Footlong: $6.75 \n 6-inch: $4.25";
+            PlaceOrder3 = "Tuna \n Footlong: $6.75 \n 6-inch: $4.25";
+            PlaceOrder4 = "Veggie Delite \n Footlong: $5.50 \n 6-inch: $3.75";
 
             TapToOrder = new DelegateCommand(AddToCart);
             TapToOrder1 = new DelegateCommand(AddToCart1);
             TapToOrder2 = new DelegateCommand(AddToCart2);
             TapToOrder3 = new DelegateCommand(AddToCart3);
+            TapToOrder4 = new DelegateCommand(AddToCart4);
         }
 
         private async void AddToCart()
@@ -143,6 +152,27 @@ namespace DineNDash.ViewModels
                 await _repo.AddItem(newItem3);
                 var navParams = new NavigationParameters();
                 navParams.Add("ItemAdded", newItem3);
+                await Task.Delay(1);
+            }
+
+        }
+        private async void AddToCart4()
+        {
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(AddToCart4)}");
+
+            bool userResponse = await page_service.DisplayAlertAsync("Add Item?", "Are you sure you want to add item to cart?", "Ok", "Cancel");
+            if (userResponse == false)
+                return;
+            else
+            {
+                OrderItem newItem4 = new OrderItem
+                {
+                    Item = this.PlaceOrder4
+                };
+
+                await _repo.AddItem(newItem4);
+                var navParams = new NavigationParameters();
+                navParams.Add("ItemAdded", newItem4);
                 await Task.Delay(1);
             }
 
