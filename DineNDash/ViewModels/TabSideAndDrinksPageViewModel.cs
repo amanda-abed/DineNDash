@@ -11,7 +11,7 @@ using Prism.Services;
 
 namespace DineNDash.ViewModels
 {
-    public class TabIndivItemPageViewModel : BindableBase, INavigationAware
+    public class TabSideAndDrinksPageViewModel : BindableBase, INavigationAware
     {
         INavigationService nav_service;
         IPageDialogService page_service;
@@ -46,16 +46,16 @@ namespace DineNDash.ViewModels
             get { return place_order3; }
             set { SetProperty(ref place_order3, value); }
         }
-        public TabIndivItemPageViewModel(INavigationService navigationService, IRepository repository, IPageDialogService pageDialogService)
+        public TabSideAndDrinksPageViewModel(INavigationService navigationService, IRepository repository, IPageDialogService pageDialogService)
         {
             nav_service = navigationService;
             page_service = pageDialogService;
             _repo = repository;
 
-            PlaceOrder = "Fries \n $1.80";
-            PlaceOrder1 = "Hamburger \n $2.50";
-            PlaceOrder2 = "Cheeseburger \n $2.80";
-            PlaceOrder3 = "Double-Double \n $3.30";
+            PlaceOrder = "Cookies \n $0.79";
+            PlaceOrder1 = "Chips \n $1.29";
+            PlaceOrder2 = "Coca Cola Fountain Sodas \n $1.99";
+            PlaceOrder3 = "Milk \n $1.59";
 
             TapToOrder = new DelegateCommand(AddToCart);
             TapToOrder1 = new DelegateCommand(AddToCart1);
@@ -166,4 +166,5 @@ namespace DineNDash.ViewModels
 
     }
 }
+
 

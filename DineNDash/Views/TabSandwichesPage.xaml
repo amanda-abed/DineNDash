@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="DineNDash.Views.TabSandwichesPage"
+    BackgroundImage="subwayBackground.png">
+    <ContentPage.Content>
+          <Grid
+            HorizontalOptions="Center"
+            VerticalOptions="Fill">
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    Height="*" />
+                <RowDefinition
+                    Height="*" />
+                <RowDefinition
+                    Height="*" />
+                <RowDefinition
+                    Height="*" />
+                <RowDefinition
+                    Height="*" />
+                <RowDefinition
+                    Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+                    Width="auto" />
+                <ColumnDefinition
+                    Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image
+                Grid.Row="0"
+                Grid.Column="0"
+                Source="turkey.png"
+            />
+             <Image
+                Grid.Row="1"
+                Grid.Column="0"
+                Source="club.png"
+            />
+             <Image
+                Grid.Row="2"
+                Grid.Column="0"
+                Source="chicken.png"
+            />
+             <Image
+                Grid.Row="3"
+                Grid.Column="0"
+                Source="tuna.png"
+            />
+             <Image
+                Grid.Row="4"
+                Grid.Column="0"
+                Source="veggie.png"
+            />
+            <Label
+                Text="{Binding PlaceOrder}"
+                TextColor="White"
+                Grid.Row="0"
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HorizontalTextAlignment="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding TapToOrder}" />
+                </Label.GestureRecognizers>
+            </Label>
+              <Label
+                Text="{Binding PlaceOrder1}"
+                TextColor="White"
+                Grid.Row="1"
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HorizontalTextAlignment="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding TapToOrder1}" />
+                </Label.GestureRecognizers>
+            </Label>
+              <Label
+                Text="{Binding PlaceOrder2}"
+                TextColor="White"
+                Grid.Row="2"
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HorizontalTextAlignment="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding TapToOrder2}" />
+                </Label.GestureRecognizers>
+            </Label>
+              <Label
+                Text="{Binding PlaceOrder3}"
+                TextColor="White"
+                Grid.Row="3"
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HorizontalTextAlignment="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding TapToOrder3}" />
+                </Label.GestureRecognizers>
+            </Label>
+             <Label
+                Text="{Binding PlaceOrder4}"
+                TextColor="White"
+                Grid.Row="4"
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HorizontalTextAlignment="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding TapToOrder4}" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Image
+                Source="subwayLogo.png"
+                Grid.Row="5"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                VerticalOptions="End"
+                WidthRequest="60"
+                HeightRequest="60"
+                />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -126,6 +126,18 @@
     <AndroidResource Include="Resources\drawable\cheeseburger.png" />
     <AndroidResource Include="Resources\drawable\shakes.png" />
     <AndroidResource Include="Resources\drawable\drinks.png" />
+    <AndroidResource Include="Resources\drawable\sub.png" />
+    <AndroidResource Include="Resources\drawable\subwayBackground.png" />
+    <AndroidResource Include="Resources\drawable\milk.png" />
+    <AndroidResource Include="Resources\drawable\chips.png" />
+    <AndroidResource Include="Resources\drawable\subwaydrink.png" />
+    <AndroidResource Include="Resources\drawable\cookies.png" />
+    <AndroidResource Include="Resources\drawable\subwayLogo.png" />
+    <AndroidResource Include="Resources\drawable\turkey.png" />
+    <AndroidResource Include="Resources\drawable\club.png" />
+    <AndroidResource Include="Resources\drawable\chicken.png" />
+    <AndroidResource Include="Resources\drawable\tuna.png" />
+    <AndroidResource Include="Resources\drawable\veggie.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
