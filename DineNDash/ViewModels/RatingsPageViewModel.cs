@@ -13,7 +13,8 @@ namespace DineNDash.ViewModels
         
         public RatingsPageViewModel()
         {
-            Plugin.StoreReview.CrossStoreReview.Current.OpenStoreReviewPage("com.companyname.DineNDash");
+            string appId = "com.companyname.DineNDash";
+            Plugin.StoreReview.CrossStoreReview.Current.OpenStoreListing(appId);
         }
     }
 
