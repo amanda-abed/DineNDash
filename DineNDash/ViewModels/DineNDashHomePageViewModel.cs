@@ -31,7 +31,7 @@ namespace DineNDash.ViewModels
             });
         });
 
-    INavigationService _navigationService;
+        INavigationService _navigationService;
         public DelegateCommand GoToRestaurantSide { get; set; }
         //public DelegateCommand GoToMapCommand { get; set; }
         public DelegateCommand searchActivated { get; set; }

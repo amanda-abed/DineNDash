@@ -40,6 +40,8 @@ namespace DineNDash
             containerRegistry.RegisterForNavigation<TabMealPage, TabMealPageViewModel>();
             containerRegistry.RegisterForNavigation<TabIndivItemPage, TabIndivItemPageViewModel>();
             containerRegistry.RegisterForNavigation<TabDrinkPage, TabDrinkPageViewModel>();
+            containerRegistry.RegisterForNavigation<TabSideAndDrinksPage, TabSideAndDrinksPageViewModel>();
+            containerRegistry.RegisterForNavigation<TabSandwichesPage, TabSandwichesPageViewModel>();
             containerRegistry.RegisterForNavigation<RestaurantSidePage, RestaurantSidePageViewModel>();
             containerRegistry.RegisterForNavigation<GetStartedPage, GetStartedPageViewModel>();
             containerRegistry.RegisterForNavigation<LearnMorePage, LearnMorePageViewModel>();
