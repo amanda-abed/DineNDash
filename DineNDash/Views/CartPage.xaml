@@ -58,6 +58,8 @@
                 <Button
                     Text="Continue to Checkout"
                     TextColor="Black"
+                    FontSize="15"
+                    FontAttributes="Bold"
                     Command="{Binding CheckoutCommand}"
                     HorizontalOptions="Center"
                     VerticalOptions="Center" />

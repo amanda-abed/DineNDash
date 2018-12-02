@@ -5,7 +5,9 @@
     x:Class="DineNDash.Views.CashPage"
     BackgroundImage="paymentBackground.jpeg">
     <StackLayout
-        Padding="20, 20, 50, 15">
+        Padding="20, 20, 50, 15"
+        HorizontalOptions="Center"
+        VerticalOptions="Center">
         <Grid
             HorizontalOptions="Center"
             VerticalOptions="Center">
@@ -24,8 +26,10 @@
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
                 HorizontalOptions="Center"
-                VerticalOptions="Center"
+                VerticalOptions="Start"
                 HorizontalTextAlignment="Center"
+                FontSize="20"
+                FontAttributes="Bold"
                 />
             <Label
                 Text="Server Code:"
@@ -46,6 +50,7 @@
             <Button
                 Text="Next"
                 TextColor="Black"
+                FontSize="20"
                 FontAttributes="Bold"
                 Grid.Row="2"
                 Grid.Column="0"

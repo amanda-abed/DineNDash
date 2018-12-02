@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
+using DineNDash.Models;
+using DineNDash.Services;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -14,8 +17,16 @@ namespace DineNDash.ViewModels
     {
         INavigationService nav_service;
         IPageDialogService _pageDialogService;
+        IRepository _repo;
 
-        public DelegateCommand GoToMenuPage { get; set; }
+        public DelegateCommand<OrderItem> GoToMenuPage { get; set; }
+
+        private ObservableCollection<OrderItem> _item;
+        public ObservableCollection<OrderItem> Item
+        {
+            get { return _item; }
+            set { SetProperty(ref _item, value); }
+        }
 
         private string selectedSeat;
         public string SelectedSeat
@@ -31,20 +42,21 @@ namespace DineNDash.ViewModels
             set { SetProperty(ref availableSeats, value); }
         }
 
-        public ChooseSeatingPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService)
+        public ChooseSeatingPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService, IRepository repository)
         {
             nav_service = navigationService;
             _pageDialogService = pageDialogService;
+            _repo = repository;
 
             availableSeats = new List<string>()
             {
                 "1","2","3","4","5","6","7"
             };
 
-            GoToMenuPage = new DelegateCommand(OntoNextPage);
+            GoToMenuPage = new DelegateCommand<OrderItem>(OntoNextPage);
         }
 
-        private async void OntoNextPage()
+        private async void OntoNextPage(OrderItem listOfItems)
         {
             if (string.IsNullOrEmpty(selectedSeat))
             {
@@ -54,6 +66,7 @@ namespace DineNDash.ViewModels
             else
             {
                 await nav_service.NavigateAsync("MenuOneContainerPage", null);
+                _repo.RemoveAllItems(listOfItems);
             }
         }
 
