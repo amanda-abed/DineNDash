@@ -189,6 +189,9 @@
     <PackageReference Include="Xamarin.Forms.Maps">
       <Version>3.4.0.1008975</Version>
     </PackageReference>
+    <PackageReference Include="Xam.Plugins.Notifier">
+      <Version>3.0.1</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -231,5 +234,6 @@
     <BundleResource Include="Resources\chicken.png" />
     <BundleResource Include="Resources\tuna.png" />
     <BundleResource Include="Resources\veggie.png" />
+    <BundleResource Include="Resources\restSide.png" />
   </ItemGroup>
 </Project>

@@ -73,6 +73,16 @@ namespace DineNDash.ViewModels
                 var navParams = new NavigationParameters();
                 navParams.Add("ItemAdded", newItem);
                 await Task.Delay(1);
+
+                RestaurantSideItem newItem0 = new RestaurantSideItem
+                {
+                    Item = this.PlaceOrder
+                };
+
+                await _repo.AddItem(newItem0);
+                var navParams0 = new NavigationParameters();
+                navParams0.Add("ItemAdded", newItem0);
+                await Task.Delay(1);
             }
 
             //await nav_service.NavigateAsync("CartPage", navParams);
@@ -95,6 +105,16 @@ namespace DineNDash.ViewModels
                 var navParams = new NavigationParameters();
                 navParams.Add("ItemAdded", newItem1);
                 await Task.Delay(1);
+
+                RestaurantSideItem newItem1a = new RestaurantSideItem
+                {
+                    Item = this.PlaceOrder1
+                };
+
+                await _repo.AddItem(newItem1a);
+                var navParams1 = new NavigationParameters();
+                navParams1.Add("ItemAdded", newItem1a);
+                await Task.Delay(1);
             }
 
             //await nav_service.NavigateAsync("CartPage", navParams);
@@ -116,6 +136,16 @@ namespace DineNDash.ViewModels
                 await _repo.AddItem(newItem2);
                 var navParams = new NavigationParameters();
                 navParams.Add("ItemAdded", newItem2);
+                await Task.Delay(1);
+
+                RestaurantSideItem newItem2a = new RestaurantSideItem
+                {
+                    Item = this.PlaceOrder2
+                };
+
+                await _repo.AddItem(newItem2a);
+                var navParams1 = new NavigationParameters();
+                navParams1.Add("ItemAdded", newItem2a);
                 await Task.Delay(1);
             }
 

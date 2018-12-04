@@ -24,7 +24,7 @@ namespace DineNDash.ViewModels
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnToCart)}");
 
-            await nav_service.NavigateAsync("CartPage", null);
+            await nav_service.NavigateAsync("CartSubPage", null);
         }
 
         public void OnNavigatedFrom(INavigationParameters parameters)

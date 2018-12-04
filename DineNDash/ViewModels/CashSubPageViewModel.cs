@@ -11,7 +11,7 @@ using Xamarin.Forms;
 
 namespace DineNDash.ViewModels
 {
-    public class CashPageViewModel : BindableBase, INavigationAware
+    public class CashSubPageViewModel : BindableBase, INavigationAware
     {
         INavigationService nav_service;
         IPageDialogService _pageDialogService;
@@ -33,7 +33,7 @@ namespace DineNDash.ViewModels
             set { SetProperty(ref place_cash, value); }
         }
 
-        public CashPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService, IRepository repository)
+        public CashSubPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService, IRepository repository)
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(CashPageViewModel)}:  ctor");
 
@@ -50,29 +50,32 @@ namespace DineNDash.ViewModels
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNextPage)}");
 
-            if (string.IsNullOrEmpty(secret_code)) {
+            if (string.IsNullOrEmpty(secret_code))
+            {
                 await _pageDialogService.DisplayAlertAsync("Error", "A server must enter valid code", "Dismiss");
                 return;
             }
 
-            if (secret_code == "!8&v") {
-                await nav_service.NavigateAsync("ConfirmationPage", null);
+            if (secret_code == "!8&v")
+            {
+                await nav_service.NavigateAsync("ConfirmationSubPage", null);
 
-                RestaurantSideItem cashPayment = new RestaurantSideItem
+                Restaurant2SideItem cashPayment2 = new Restaurant2SideItem
                 {
                     Item = this.PlaceCash
                 };
 
-                await _repo.AddItem(cashPayment);
+                await _repo.AddItem(cashPayment2);
                 var navParams = new NavigationParameters();
                 navParams.Add("ItemAdded", navParams);
                 await Task.Delay(1);
             }
-            if (secret_code == "" || secret_code != "!8&v"){
+            if (secret_code == "" || secret_code != "!8&v")
+            {
                 await _pageDialogService.DisplayAlertAsync("Error", "Incorrect Code", "Try Again");
                 return;
             }
-}
+        }
 
         public void OnNavigatedFrom(INavigationParameters parameters)
         {

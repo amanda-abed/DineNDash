@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="DineNDash.Views.CartSubPage"
+    IsBusy="{Binding ShowIsBusySpinner}"
+    Title="Cart"
+    x:Name="Cart">
+    <StackLayout>
+        <ListView
+            ItemsSource="{Binding FoodItem}"
+            IsRefreshing="{Binding ShowIsBusySpinner}"
+            IsPullToRefreshEnabled="true"
+            RefreshCommand="{Binding PullToRefreshCommand}"
+            BackgroundColor="#ffaf4e">
+          <!--  <ListView.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition
+                            Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition
+                            Width="*" />
+                        <ColumnDefinition
+                            Width="*" />
+                        <ColumnDefinition
+                            Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Text="Your Cart"
+                        FontAttributes="Bold"
+                        FontSize="Large"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        />
+                </Grid>
+            </ListView.Header>-->
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell
+                        Text="{Binding Item}"
+                        TextColor="Black">
+                        <TextCell.ContextActions>
+                            <MenuItem
+                                Text="Delete"
+                                CommandParameter="{Binding .}"
+                                Command="{Binding Path=BindingContext.DeleteCommand, Source={x:Reference Name=Cart}}"
+                                IsDestructive="true" />
+                        </TextCell.ContextActions>
+                    </TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.Footer>
+                <Button
+                    Text="Continue to Checkout"
+                    TextColor="Black"
+                    FontSize="15"
+                    FontAttributes="Bold"
+                    Command="{Binding CheckoutCommand}"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" />
+            </ListView.Footer>
+        </ListView>
+    </StackLayout>
+</ContentPage>

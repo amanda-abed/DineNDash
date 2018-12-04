@@ -47,6 +47,15 @@ namespace DineNDash
             containerRegistry.RegisterForNavigation<LearnMorePage, LearnMorePageViewModel>();
             containerRegistry.RegisterForNavigation<SubwaySeatPage, SubwaySeatPageViewModel>();
             containerRegistry.RegisterForNavigation<MenuTwoContainerPage, MenuTwoContainerPageViewModel>();
+            containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
+            containerRegistry.RegisterForNavigation<CallsPage, CallsPageViewModel>();
+            containerRegistry.RegisterForNavigation<CallsSubPage, CallsSubPageViewModel>();
+            containerRegistry.RegisterForNavigation<PaymentSubPage, PaymentSubPageViewModel>();
+            containerRegistry.RegisterForNavigation<CashSubPage, CashSubPageViewModel>();
+            containerRegistry.RegisterForNavigation<CreditInfoSubPage, CreditInfoSubPageViewModel>();
+            containerRegistry.RegisterForNavigation<ConfirmationSubPage, ConfirmationSubPageViewModel>();
+            containerRegistry.RegisterForNavigation<CartSubPage, CartSubPageViewModel>();
+
             containerRegistry.RegisterSingleton<IRepository, Repository>();
         }
 

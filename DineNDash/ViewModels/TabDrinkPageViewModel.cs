@@ -81,6 +81,16 @@ namespace DineNDash.ViewModels
                 var navParams = new NavigationParameters();
                 navParams.Add("ItemAdded", newItem);
                 await Task.Delay(1);
+
+                RestaurantSideItem newItema = new RestaurantSideItem
+                {
+                    Item = this.PlaceOrder
+                };
+
+                await _repo.AddItem(newItema);
+                var navParams1 = new NavigationParameters();
+                navParams1.Add("ItemAdded", newItema);
+                await Task.Delay(1);
             }
         }
         private async void AddToCart1()
@@ -100,6 +110,16 @@ namespace DineNDash.ViewModels
                 await _repo.AddItem(newItem1);
                 var navParams = new NavigationParameters();
                 navParams.Add("ItemAdded", newItem1);
+                await Task.Delay(1);
+
+                RestaurantSideItem newItem1a = new RestaurantSideItem
+                {
+                    Item = this.PlaceOrder1
+                };
+
+                await _repo.AddItem(newItem1a);
+                var navParams1 = new NavigationParameters();
+                navParams1.Add("ItemAdded", newItem1a);
                 await Task.Delay(1);
             }
         }
@@ -121,6 +141,16 @@ namespace DineNDash.ViewModels
                 var navParams = new NavigationParameters();
                 navParams.Add("ItemAdded", newItem2);
                 await Task.Delay(1);
+
+                RestaurantSideItem newItem2a = new RestaurantSideItem
+                {
+                    Item = this.PlaceOrder2
+                };
+
+                await _repo.AddItem(newItem2a);
+                var navParams1 = new NavigationParameters();
+                navParams1.Add("ItemAdded", newItem2a);
+                await Task.Delay(1);
             }
         }
         private async void AddToCart3()
@@ -140,6 +170,16 @@ namespace DineNDash.ViewModels
                 await _repo.AddItem(newItem3);
                 var navParams = new NavigationParameters();
                 navParams.Add("ItemAdded", newItem3);
+                await Task.Delay(1);
+
+                RestaurantSideItem newItem3a = new RestaurantSideItem
+                {
+                    Item = this.PlaceOrder3
+                };
+
+                await _repo.AddItem(newItem3a);
+                var navParams1 = new NavigationParameters();
+                navParams1.Add("ItemAdded", newItem3a);
                 await Task.Delay(1);
             }
         }

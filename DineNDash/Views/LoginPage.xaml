@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="DineNDash.Views.LoginPage"
+    BackgroundImage="restSide.png">
+    <StackLayout
+        HorizontalOptions="Center"
+        VerticalOptions="Center">
+        <Label
+            Text="Enter Restaurant I.D."
+            FontSize="16"
+            FontAttributes="Bold"
+            />
+        <Entry
+            Placeholder="username"
+            Text="{Binding restID}"
+            />
+        <Label
+            Text="Enter Restaurant Password"
+            FontSize="16"
+            FontAttributes="Bold"
+            />
+        <Entry
+            Placeholder="****"
+            Text="{Binding restPassword}"
+            IsPassword="true"
+            />
+        <Button
+            Text="Login"
+            TextColor="Black"
+            Command="{Binding loginButton}"
+            FontSize="20"
+            FontAttributes="Bold"
+            />
+    </StackLayout>
+</ContentPage>

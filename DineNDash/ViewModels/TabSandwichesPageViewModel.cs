@@ -90,6 +90,16 @@ namespace DineNDash.ViewModels
                 var navParams = new NavigationParameters();
                 navParams.Add("ItemAdded", newItem);
                 await Task.Delay(1);
+
+                Restaurant2SideItem newItema = new Restaurant2SideItem
+                {
+                    Item = this.PlaceOrder
+                };
+
+                await _repo.AddItem(newItema);
+                var navParams1 = new NavigationParameters();
+                navParams1.Add("ItemAdded", newItema);
+                await Task.Delay(1);
             }
 
         }
@@ -110,6 +120,16 @@ namespace DineNDash.ViewModels
                 await _repo.AddItem(newItem1);
                 var navParams = new NavigationParameters();
                 navParams.Add("ItemAdded", newItem1);
+                await Task.Delay(1);
+
+                Restaurant2SideItem newItem1a = new Restaurant2SideItem
+                {
+                    Item = this.PlaceOrder1
+                };
+
+                await _repo.AddItem(newItem1a);
+                var navParams1 = new NavigationParameters();
+                navParams1.Add("ItemAdded", newItem1a);
                 await Task.Delay(1);
             }
 
@@ -132,6 +152,16 @@ namespace DineNDash.ViewModels
                 var navParams = new NavigationParameters();
                 navParams.Add("ItemAdded", newItem2);
                 await Task.Delay(1);
+
+                Restaurant2SideItem newItem2a = new Restaurant2SideItem
+                {
+                    Item = this.PlaceOrder2
+                };
+
+                await _repo.AddItem(newItem2a);
+                var navParams1 = new NavigationParameters();
+                navParams1.Add("ItemAdded", newItem2a);
+                await Task.Delay(1);
             }
 
         }
@@ -153,6 +183,16 @@ namespace DineNDash.ViewModels
                 var navParams = new NavigationParameters();
                 navParams.Add("ItemAdded", newItem3);
                 await Task.Delay(1);
+
+                Restaurant2SideItem newItem3a = new Restaurant2SideItem
+                {
+                    Item = this.PlaceOrder3
+                };
+
+                await _repo.AddItem(newItem3a);
+                var navParams1 = new NavigationParameters();
+                navParams1.Add("ItemAdded", newItem3a);
+                await Task.Delay(1);
             }
 
         }
@@ -173,6 +213,16 @@ namespace DineNDash.ViewModels
                 await _repo.AddItem(newItem4);
                 var navParams = new NavigationParameters();
                 navParams.Add("ItemAdded", newItem4);
+                await Task.Delay(1);
+
+                Restaurant2SideItem newItem4a = new Restaurant2SideItem
+                {
+                    Item = this.PlaceOrder4
+                };
+
+                await _repo.AddItem(newItem4a);
+                var navParams1 = new NavigationParameters();
+                navParams1.Add("ItemAdded", newItem4a);
                 await Task.Delay(1);
             }
 

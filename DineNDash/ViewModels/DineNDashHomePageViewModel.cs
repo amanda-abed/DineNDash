@@ -12,18 +12,18 @@ using Xamarin.Forms.GoogleMaps;
 
 namespace DineNDash.ViewModels
 {
-    public class DineNDashHomePageViewModel : BindableBase
+    public class DineNDashHomePageViewModel : BindableBase, INavigationAware
     {
         public ObservableCollection<Pin> Pins { get; set; }
 
         public Command<MapClickedEventArgs> MapClickedCommand =>
         new Command<MapClickedEventArgs>(args =>
         {
-        Pins.Add(new Pin
-        {
-            Label = $"In-N-Out",
-            Position = new Position(33.1372, -117.1772)//args.Point
-        });
+            Pins.Add(new Pin
+            {
+                Label = $"In-N-Out",
+                Position = new Position(33.1372, -117.1772)//args.Point
+            });
             Pins.Add(new Pin
             {
                 Label = $"Subway",
@@ -36,6 +36,7 @@ namespace DineNDash.ViewModels
         //public DelegateCommand GoToMapCommand { get; set; }
         public DelegateCommand searchActivated { get; set; }
         public DelegateCommand<string> SuggestionTappedCommand { get; set; }
+        //public DelegateCommand<string> RestaurantSelectedCommand { get; set; }
 
         private string enter_restaurant;
         public string EnterRestaurant
@@ -57,6 +58,13 @@ namespace DineNDash.ViewModels
             get { return is_visible; }
             set { SetProperty(ref is_visible, value); }
         }
+
+        //private string _selectedRestaurant;
+        //public string SelectedRestaurant
+        //{
+        //    get { return _selectedRestaurant; }
+        //    set { SetProperty(ref _selectedRestaurant, value); }
+        //}
 
         List<string> restaurants = new List<string>
         {
@@ -82,13 +90,19 @@ namespace DineNDash.ViewModels
             //GoToMapCommand = new DelegateCommand(GoToMap);
             searchActivated = new DelegateCommand(GoToSearch);
             SuggestionTappedCommand = new DelegateCommand<string>(OnSuggestionTapped);
+            //RestaurantSelectedCommand = new DelegateCommand<string>(OnRestSelected);
         }
+
+        //private void OnRestSelected(string restSelected)
+        //{
+        //    Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnRestSelected)}:  {restSelected}");
+        //}
 
         private async void RestaurantSide()
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(RestaurantSide)}");
 
-            await _navigationService.NavigateAsync("RestaurantSidePage", null);
+            await _navigationService.NavigateAsync("LoginPage", null);
         }
 
         private void GoToSearch()
@@ -105,7 +119,7 @@ namespace DineNDash.ViewModels
             }
         }
 
-        private async void OnSuggestionTapped(string suggestionTapped)
+        public async void OnSuggestionTapped(string suggestionTapped)
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnSuggestionTapped)}:  {suggestionTapped}");
 
@@ -114,11 +128,27 @@ namespace DineNDash.ViewModels
                 await _navigationService.NavigateAsync("ChooseSeatingPage", null);
                 IsVisible = false;
             }
-            else if(suggestionTapped == "Subway")
+            else if (suggestionTapped == "Subway")
             {
                 await _navigationService.NavigateAsync("SubwaySeatPage", null);
                 IsVisible = false;
             }
+        }
+
+
+        public void OnNavigatedFrom(INavigationParameters parameters)
+        {
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavigatedFrom)}");
+        }
+
+        public void OnNavigatedTo(INavigationParameters parameters)
+        {
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavigatedTo)}");
+        }
+
+        public void OnNavigatingTo(INavigationParameters parameters)
+        {
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavigatingTo)}");
         }
 
         //private void GoToMap()
@@ -127,6 +157,4 @@ namespace DineNDash.ViewModels
         //    CrossExternalMaps.Current.NavigateTo("In-N-Out Burger", "583 Grand Ave", "San Marcos", "CA", "92078", "USA", "USA");
         //}
     }
-
-
 }

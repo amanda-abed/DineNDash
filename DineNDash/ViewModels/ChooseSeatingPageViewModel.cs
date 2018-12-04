@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Threading.Tasks;
 using DineNDash.Models;
 using DineNDash.Services;
 using Prism.Commands;
@@ -66,6 +67,17 @@ namespace DineNDash.ViewModels
             else
             {
                 await nav_service.NavigateAsync("MenuOneContainerPage", null);
+
+                RestaurantSideItem seat = new RestaurantSideItem
+                {
+                    Item = this.SelectedSeat
+                };
+
+                await _repo.AddItem(seat);
+                var navParams = new NavigationParameters();
+                navParams.Add("ItemAdded", navParams);
+                await Task.Delay(1);
+
                 _repo.RemoveAllItems(listOfItems);
             }
         }

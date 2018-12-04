@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="DineNDash.Views.CallsSubPage">
+    <StackLayout>
+        <ListView
+            ItemsSource="{Binding RestaurantItems}"
+            IsRefreshing="{Binding ShowIsBusySpinner}"
+            IsPullToRefreshEnabled="true"
+            RefreshCommand="{Binding PullToRefreshCommand}"
+            BackgroundColor="#f8b500">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell
+                        Text="{Binding Item}"
+                        TextColor="Black">
+                       <!-- <TextCell.ContextActions>
+                            <MenuItem
+                                Text="Delete"
+                                CommandParameter="{Binding .}"
+                                Command="{Binding Path=BindingContext.DeleteCommand, Source={x:Reference Name=Cart}}"
+                                IsDestructive="true" />
+                        </TextCell.ContextActions>-->
+                    </TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.Footer>
+                <Button
+                    Text="Logout"
+                    TextColor="Black"
+                    FontSize="15"
+                    FontAttributes="Bold"
+                    Command="{Binding logoutCommand}"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" />
+            </ListView.Footer>
+        </ListView>
+    </StackLayout>
+</ContentPage>
