@@ -59,11 +59,11 @@ namespace DineNDash.ViewModels
             page_service = pageDialogService;
             _repo = repository;
 
-            PlaceOrder = "Turkey Breast \n Footlong: $6.75 \n 6-inch: $4.25";
-            PlaceOrder1 = "Subway Club \n Footlong: $7.75 \n 6-inch: $4.75";
-            PlaceOrder2 = "Oven Roasted Chicken \n Footlong: $6.75 \n 6-inch: $4.25";
-            PlaceOrder3 = "Tuna \n Footlong: $6.75 \n 6-inch: $4.25";
-            PlaceOrder4 = "Veggie Delite \n Footlong: $5.50 \n 6-inch: $3.75";
+            PlaceOrder = "Turkey Breast \n 6-inch: $4.25";
+            PlaceOrder1 = "Subway Club \n 6-inch: $4.75";
+            PlaceOrder2 = "Oven Roasted Chicken \n 6-inch: $4.25";
+            PlaceOrder3 = "Tuna \n 6-inch: $4.25";
+            PlaceOrder4 = "Veggie Delite \n 6-inch: $3.75";
 
             TapToOrder = new DelegateCommand(AddToCart);
             TapToOrder1 = new DelegateCommand(AddToCart1);
