@@ -51,7 +51,6 @@ namespace DineNDash.ViewModels
         private async void GoToHomePage()
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(GoToHomePage)}");
-            CrossLocalNotifications.Current.Show("Dine & Dash", "Thank you for your order! Your food is on its way...", 1, DateTime.Now.AddSeconds(2));
             await nav_service.NavigateAsync("MainPage", null);
             RestaurantSideItem foodToDeliver = new RestaurantSideItem
             {
@@ -71,7 +70,6 @@ namespace DineNDash.ViewModels
 
             bool response = await displayMessage.DisplayAlertAsync("LIKE OUR APP?", "Share your experience with us!", "Rate Now!", "Dismiss");
             if (response == false){
-                CrossLocalNotifications.Current.Show("Dine & Dash", "Thank you for your order! Your food is on its way...");
                 await nav_service.NavigateAsync("GetStartedPage", null);
                 //  _repo.RemoveAllItems(listOfItems);
                 RestaurantSideItem foodToDeliver = new RestaurantSideItem
@@ -87,7 +85,6 @@ namespace DineNDash.ViewModels
             else
             {
                 await nav_service.NavigateAsync("RatingsPage", null);
-                CrossLocalNotifications.Current.Show("Dine & Dash", "Thank you for your order! Your food is on its way...");
                 RestaurantSideItem foodToDeliver = new RestaurantSideItem
                 {
                     Item = this.FoodDelivery
