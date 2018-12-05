@@ -98,6 +98,13 @@ namespace DineNDash.ViewModels
             set { SetProperty(ref selectedCard, value); }
         }
 
+        private string cardPayment;
+        public string CardPayment
+        {
+            get { return cardPayment; }
+            set { SetProperty(ref cardPayment, value); }
+        }
+
         public CreditInfoSubPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService, IRepository repository)
         {
             nav_service = navigationService;
@@ -110,6 +117,8 @@ namespace DineNDash.ViewModels
                 "Visa",
                 "Discover"
             };
+
+            CardPayment = "Paid with card";
 
             CreditInfoPageCommand = new DelegateCommand(GoToNextPage);
             GoBackToPaymentPageCommand = new DelegateCommand(BackToPaymentPage);
@@ -155,9 +164,28 @@ namespace DineNDash.ViewModels
                     await _pageDialogService.DisplayAlertAsync("Error", "You must enter a valid year", "Dismiss");
                     return;
                 }
+                else if (state_entry.Length != 2)
+                {
+                    await _pageDialogService.DisplayAlertAsync("Error", "You must enter a valid year", "Dismiss");
+                    return;
+                }
+                else if (zip_entry.Length != 5)
+                {
+                    await _pageDialogService.DisplayAlertAsync("Error", "You must enter a valid year", "Dismiss");
+                    return;
+                }
                 else
                 {
                     await nav_service.NavigateAsync("ConfirmationSubPage", null);
+                    Restaurant2SideItem card_payment = new Restaurant2SideItem
+                    {
+                        Item = this.CardPayment
+                    };
+
+                    await _repo.AddItem(card_payment);
+                    var navParams = new NavigationParameters();
+                    navParams.Add("ItemAdded", navParams);
+                    await Task.Delay(1);
                 }
             }
         }
