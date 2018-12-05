@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using DineNDash.Models;
 using DineNDash.Services;
+using Plugin.LocalNotifications;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -56,6 +57,8 @@ namespace DineNDash.ViewModels
             }
 
             if (secret_code == "!8&v") {
+                CrossLocalNotifications.Current.Show("Dine & Dash", "Thank you for your order! Your food is on its way...", 1, DateTime.Now.AddSeconds(2));
+
                 await nav_service.NavigateAsync("ConfirmationPage", null);
 
                 RestaurantSideItem cashPayment = new RestaurantSideItem
