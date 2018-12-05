@@ -85,6 +85,9 @@
     <PackageReference Include="Xamarin.Forms.Maps">
       <Version>3.4.0.1008975</Version>
     </PackageReference>
+    <PackageReference Include="Xam.Plugins.Notifier">
+      <Version>3.0.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -145,6 +148,7 @@
     <AndroidResource Include="Resources\drawable\chicken.png" />
     <AndroidResource Include="Resources\drawable\tuna.png" />
     <AndroidResource Include="Resources\drawable\veggie.png" />
+    <AndroidResource Include="Resources\drawable\restSide.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />

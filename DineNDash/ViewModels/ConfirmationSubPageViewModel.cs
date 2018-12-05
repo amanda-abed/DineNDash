@@ -13,7 +13,7 @@ using Xamarin.Forms;
 
 namespace DineNDash.ViewModels
 {
-    public class ConfirmationPageViewModel : BindableBase, INavigationAware
+    public class ConfirmationSubPageViewModel : BindableBase, INavigationAware
     {
         IPageDialogService displayMessage;
         INavigationService nav_service;
@@ -36,7 +36,7 @@ namespace DineNDash.ViewModels
             set { SetProperty(ref foodDelivery, value); }
         }
 
-        public ConfirmationPageViewModel(IPageDialogService pageDialogService, INavigationService navigationService, IRepository repository)
+        public ConfirmationSubPageViewModel(IPageDialogService pageDialogService, INavigationService navigationService, IRepository repository)
         {
             displayMessage = pageDialogService;
             nav_service = navigationService;
@@ -53,7 +53,7 @@ namespace DineNDash.ViewModels
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(GoToHomePage)}");
             CrossLocalNotifications.Current.Show("Dine & Dash", "Thank you for your order! Your food is on its way...", 1, DateTime.Now.AddSeconds(2));
             await nav_service.NavigateAsync("MainPage", null);
-            RestaurantSideItem foodToDeliver = new RestaurantSideItem
+            Restaurant2SideItem foodToDeliver = new Restaurant2SideItem
             {
                 Item = this.FoodDelivery
             };
@@ -62,7 +62,7 @@ namespace DineNDash.ViewModels
             var navParams = new NavigationParameters();
             navParams.Add("ItemAdded", navParams);
             await Task.Delay(1);
-            //_repo.RemoveAllItems(listOfItems);
+           // _repo.RemoveAllItems(listOfItems);
         }
 
         private async void GoToRate()
@@ -70,11 +70,12 @@ namespace DineNDash.ViewModels
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(GoToRate)}");
 
             bool response = await displayMessage.DisplayAlertAsync("LIKE OUR APP?", "Share your experience with us!", "Rate Now!", "Dismiss");
-            if (response == false){
+            if (response == false)
+            {
                 CrossLocalNotifications.Current.Show("Dine & Dash", "Thank you for your order! Your food is on its way...");
                 await nav_service.NavigateAsync("GetStartedPage", null);
                 //  _repo.RemoveAllItems(listOfItems);
-                RestaurantSideItem foodToDeliver = new RestaurantSideItem
+                Restaurant2SideItem foodToDeliver = new Restaurant2SideItem
                 {
                     Item = this.FoodDelivery
                 };
@@ -88,7 +89,7 @@ namespace DineNDash.ViewModels
             {
                 await nav_service.NavigateAsync("RatingsPage", null);
                 CrossLocalNotifications.Current.Show("Dine & Dash", "Thank you for your order! Your food is on its way...");
-                RestaurantSideItem foodToDeliver = new RestaurantSideItem
+                Restaurant2SideItem foodToDeliver = new Restaurant2SideItem
                 {
                     Item = this.FoodDelivery
                 };

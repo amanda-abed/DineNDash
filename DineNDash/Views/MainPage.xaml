@@ -28,7 +28,6 @@
                 <ColumnDefinition
                     Width="auto" />
             </Grid.ColumnDefinitions>
-           
             <Label
                 Text="To begin your order please select a restaurant"
                 Grid.Row="0"
@@ -37,7 +36,7 @@
                 HorizontalTextAlignment="Center"
                 FontSize="20"
                 FontAttributes="Bold"
-                TextColor="White"/>
+                TextColor="White" />
             <StackLayout
                 Grid.Row="1"
                 Grid.Column="0"
@@ -48,28 +47,35 @@
                     PlaceholderColor="Gray"
                     SearchCommand="{Binding searchActivated}"
                     BackgroundColor="White"
-                    CancelButtonColor="Silver"/>
+                    CancelButtonColor="Silver" />
                 <ListView
                     ItemsSource="{Binding Suggestions}"
                     IsVisible="{Binding IsVisible}">
+                   <!-- SelectedItem="{Binding SelectedRestaurant}">-->
                     <ListView.Behaviors>
                         <prismBehaviors:EventToCommandBehavior
                             EventName="ItemTapped"
                             Command="{Binding SuggestionTappedCommand}"
                             EventArgsParameterPath="Item" />
+                        <!--<prismBehaviors:EventToCommandBehavior
+                            EventName="ItemSelected"
+                            Command="{Binding RestaurantSelectedCommand}"
+                            EventArgsParameterPath="SelectedItem" />-->
                     </ListView.Behaviors>
                 </ListView>
             </StackLayout>
-             <googleMaps:Map
-                     InitialCameraUpdate="33.1372, -117.1772, 13, 30, 0"
-                     MapType="Street"
-                     VerticalOptions="FillAndExpand"
-                     Grid.Row="2">
-                    <googleMaps:Map.Behaviors>
-                        <bindings:BindingPinsBehavior Value="{Binding Pins}"/>    
-                        <bindings:MapClickedToCommandBehavior Command="{Binding MapClickedCommand}"/>
-                    </googleMaps:Map.Behaviors>
-              </googleMaps:Map>
+            <googleMaps:Map
+                InitialCameraUpdate="33.1372, -117.1772, 13, 30, 0"
+                MapType="Street"
+                VerticalOptions="FillAndExpand"
+                Grid.Row="2">
+                <googleMaps:Map.Behaviors>
+                    <bindings:BindingPinsBehavior
+                        Value="{Binding Pins}" />
+                    <bindings:MapClickedToCommandBehavior
+                        Command="{Binding MapClickedCommand}" />
+                </googleMaps:Map.Behaviors>
+            </googleMaps:Map>
             <Button
                 Text="Restaurant Side"
                 Command="{Binding GoToRestaurantSide}"
@@ -77,7 +83,7 @@
                 Grid.Column="0"
                 HorizontalOptions="CenterAndExpand"
                 VerticalOptions="End"
-                TextColor="White"/>
+                TextColor="White" />
         </Grid>
     </StackLayout>
 </ContentPage>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="DineNDash.Views.PaymentSubPage"
+    BackgroundImage="paymentBackground.jpeg">
+    <StackLayout
+        VerticalOptions="CenterAndExpand"
+        HorizontalOptions="CenterAndExpand">
+        <Grid
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="Center"
+            Padding="5, 50, 5, 30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label
+                Text="What is your payment method?"
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                FontSize="30"
+                HorizontalTextAlignment="Center"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                FontAttributes="Bold"
+                />       
+            <Picker
+                Title="Select Payment Method"
+                ItemsSource="{Binding Methods}"
+                SelectedItem="{Binding SelectedMethod}"
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                />
+            
+            <Button
+                Text="Continue"
+                TextColor="Black"
+                FontAttributes="Bold"
+                FontSize="20"
+                Grid.Row="2"
+                Grid.Column="1"
+                Command="{Binding ContinueToPayment}"
+                />
+        </Grid>
+    </StackLayout>
+</ContentPage>

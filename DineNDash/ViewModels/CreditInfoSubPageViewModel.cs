@@ -12,7 +12,7 @@ using Xamarin.Forms;
 
 namespace DineNDash.ViewModels
 {
-    public class CreditInfoPageViewModel : BindableBase, INavigationAware
+    public class CreditInfoSubPageViewModel : BindableBase, INavigationAware
     {
         INavigationService nav_service;
         IPageDialogService _pageDialogService;
@@ -105,7 +105,7 @@ namespace DineNDash.ViewModels
             set { SetProperty(ref cardPayment, value); }
         }
 
-        public CreditInfoPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService, IRepository repository)
+        public CreditInfoSubPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService, IRepository repository)
         {
             nav_service = navigationService;
             _pageDialogService = pageDialogService;
@@ -128,7 +128,7 @@ namespace DineNDash.ViewModels
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(BackToPaymentPage)}");
 
-            await nav_service.NavigateAsync("PaymentPage", null);
+            await nav_service.NavigateAsync("PaymentSubPage", null);
         }
 
         private async void GoToNextPage()
@@ -176,8 +176,8 @@ namespace DineNDash.ViewModels
                 }
                 else
                 {
-                    await nav_service.NavigateAsync("ConfirmationPage", null);
-                    RestaurantSideItem card_payment = new RestaurantSideItem
+                    await nav_service.NavigateAsync("ConfirmationSubPage", null);
+                    Restaurant2SideItem card_payment = new Restaurant2SideItem
                     {
                         Item = this.CardPayment
                     };
