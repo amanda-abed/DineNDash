@@ -24,6 +24,7 @@
     <Folder Include="ViewModels\" />
     <Folder Include="Views\" />
     <Folder Include="Service\" />
+    <Folder Include="DependencyServices\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Models\RestaurantName.cs" />

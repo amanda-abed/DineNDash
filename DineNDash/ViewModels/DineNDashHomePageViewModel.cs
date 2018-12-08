@@ -91,7 +91,15 @@ namespace DineNDash.ViewModels
             searchActivated = new DelegateCommand(GoToSearch);
             SuggestionTappedCommand = new DelegateCommand<string>(OnSuggestionTapped);
             //RestaurantSelectedCommand = new DelegateCommand<string>(OnRestSelected);
+            //SQLLITE COMMAND STUFF
+            /*
+            RefreshRestarauntTopics();
+            RefreshRestarauntTableTopics();
+            RefreshRestarauntMenuTopics();
+            RefreshCategoryTopics();           
+             */
         }
+
 
         //private void OnRestSelected(string restSelected)
         //{
@@ -151,10 +159,68 @@ namespace DineNDash.ViewModels
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavigatingTo)}");
         }
 
+
         //private void GoToMap()
         //{
         //    Debug.WriteLine($"**** {this.GetType().Name}.{nameof(GoToMap)}");
         //    CrossExternalMaps.Current.NavigateTo("In-N-Out Burger", "583 Grand Ave", "San Marcos", "CA", "92078", "USA", "USA");
         //}
+        //SQL TABLE COMMANDS STUFF
+        /*
+           private ObservableCollection<Restaraunt> _Restaraunttopics;
+        public ObservableCollection<Restaraunt> RestarauntTopics
+        {
+            get { return _Restaraunttopics; }
+            set { SetProperty(ref _Restaraunttopics, value); }
+        }
+
+        private ObservableCollection<Restaraunt_Table> _RestarauntTabletopics;
+        public ObservableCollection<Restaraunt_Table> TableTopics
+        {
+            get { return _RestarauntTabletopics; }
+            set { SetProperty(ref _RestarauntTabletopics, value); }
+        }
+        private ObservableCollection<Restaraunt_Menu> _RestarauntMenutopics;
+        public ObservableCollection<Restaraunt_Menu> MenuTopics
+        {
+            get { return _RestarauntMenutopics; }
+            set { SetProperty(ref _RestarauntMenutopics, value); }
+        }
+        private ObservableCollection<Menu_Category> _Categorytopics;
+        public ObservableCollection<Menu_Category> CategoryTopics
+        {
+            get { return _Categorytopics; }
+            set { SetProperty(ref _Categorytopics, value); }
+        }       
+          private async void RefreshRestarauntMenuTopics()
+        {
+            Console.WriteLine($"**** {this.GetType().Name}.{nameof(RefreshRestarauntMenuTopics)}");
+            MenuTopics = await _DineNDashRepository.GetAllRestarauntMenu();
+        }
+
+        private async void RefreshCategoryTopics()
+        {
+            Console.WriteLine($"**** {this.GetType().Name}.{nameof(RefreshRestarauntTopics)}");
+            CategoryTopics = await _DineNDashRepository.GetAllCategory();
+        }
+
+        private async void RefreshRestarauntTableTopics()
+        {
+            Console.WriteLine($"**** {this.GetType().Name}.{nameof(RefreshRestarauntTableTopics)}");
+            TableTopics = await _DineNDashRepository.GetAllRestarauntTable();
+        }
+        private async void RefreshRestarauntTopics()
+        {
+            Console.WriteLine($"**** {this.GetType().Name}.{nameof(RefreshRestarauntTopics)}");
+            RestarauntTopics = await _DineNDashRepository.GetAllRestaraunts();
+        }
+
+        private void OnAddTopicTapped()
+        {
+            Console.WriteLine($"**** {this.GetType().Name}.{nameof(OnAddTopicTapped)}");
+            }   
+          */
     }
 }
+
+
